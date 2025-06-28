@@ -1,0 +1,94 @@
+
+.box-img{
+
+    width: 20%;
+    
+    }
+.img-logo{
+    
+      height: 80px;
+      border-radius: 20px;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+    
+.Cabezalho{
+    
+      width: 100%;
+      height: 15vh;
+      display:flex;
+      background-color: #FFAFCC;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+.box-barra{
+    
+      width: 50%;
+    }
+    
+.pesquiça{
+    
+      position: relative;
+      width: 85%;
+      height: 20%;
+      border:none;
+      border-radius: 30px;
+      outline: none;
+      padding: 0.7rem;
+      background-color:#f1d5e0;
+      box-shadow: 0 1px 1px 1px  #979395;
+    
+    }
+
+.carrinho{
+
+        height: 30%;
+        font-size: 1.7rem;
+        color:#312b2e;
+        cursor:pointer;
+    }
+    
+.box-bottom{
+    
+      width: 15%;
+      display: flex;
+      justify-content: space-around;
+      font-weight:500;
+    }
+    
+.cadastro-login{
+    
+      background-color: #f1d5e0;
+      padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    
+.cadastro-login:hover{
+    
+      background-color:#e26b9b;
+    }
+
+    .enlaceNav{
+
+      width: 20%;
+      display: flex;
+      justify-content: space-around;
+      font-weight: 500;
+    }
+    
+    .barra-nav{
+
+      text-Decoration:none;
+      background-Color:#CDB4DB;
+      padding:0.2rem 0.6rem;
+      border-Radius:20px;
+      color: #312b2e;
+    }
+
+    .barra-nav:hover{
+
+     background-color: #f1d5e0;
+    }
+    
