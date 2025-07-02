@@ -7,6 +7,7 @@ import './styledcomponentes/header.css'
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import About from './pages/About.js';
 import Contato from './pages/Contato.js';
+import Carrinho from './componentes/Carrinho.js' //tava fazendo teste do carrinho
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

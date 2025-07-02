@@ -1,19 +1,22 @@
 import './App.css';
-import Cabezalho from "./componentes/header.js"
+import Cabezalho from "./componentes/header.js";
 import NavBar from './componentes/navBar.js';
-import AccordionCategorias from './componentes/acordeonCategory.js';
+import LojaProdutos from './componentes/LojaProdutos.js';
+import Carrinho from './componentes/Carrinho.js';
+
 
 function App() {
   return (
+    
     <>
      <div className="App">
-
      <Cabezalho/>
      <NavBar/>
-     <AccordionCategorias />
-
+     <LojaProdutos/>
+     <Carrinho/>
      </div>
-   </>
+     </>
+
   );
 }
 

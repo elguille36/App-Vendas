@@ -1,5 +1,6 @@
 import React from "react";
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+// import Carrinho from './Carrinho.js' fazendo teste do carrinho
 
 function Cabezalho(){
 
@@ -10,11 +11,11 @@ function Cabezalho(){
     </div>
     <div className="box-barra">
     <input className="pesquiça" type="text" placeholder="Pesquiçar Produtos..."></input>
-    <FaSearch style={{right:"28rem",top:"2.5rem", outline:"none",position:"absolute"}}/>
+    <FaSearch style={{right:"29rem",top:"2.5rem", outline:"none",position:"absolute"}}/>
     </div>
-    <div className="carrinho">
-        <bottom><FaShoppingCart/></bottom>
-    </div>
+    {/* <div className="carrinho">
+     <Carrinho/>
+    </div> */}
     <div className="box-bottom">
         <bottom className="cadastro-login">Cadastro</bottom>
 

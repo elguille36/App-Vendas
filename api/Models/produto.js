@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database.js';
+import chalk from 'chalk';
 
 const Produto = sequelize.define('Produto', {
   nome: DataTypes.STRING,
@@ -7,5 +8,7 @@ const Produto = sequelize.define('Produto', {
   preco: DataTypes.FLOAT,
   imagem: DataTypes.STRING,
 });
+
+console.log(chalk.bgRedBright`Models Produtos Funcionando`)
 
 export default Produto;
