@@ -3,19 +3,17 @@ import axios from 'axios';
 
 const BotaoAdicionar = ({ produto }) => {
   const adicionar = async () => {
-    const item = {
-      produtoId: produto.id,
-      // nome: produto.nome,
-      // preco: produto.preco,
-      // imagem: produto.imagem,
-      quantidade: 1
-    };
-
+   
     try {
-      await axios.post('http://localhost:3001/carrinho', item);
+      await axios.post('http://localhost:3001/carrinho',{
+      nome: produto.nome,
+      preco: produto.preco,
+      quantidade: 1,
+      imagem: produto.imagem,
+      });
       alert(`${produto.nome} adicionado ao carrinho`);
-    } catch (err) {
-      console.error('Erro ao adicionar:', err);
+    } catch (error) {
+      console.error('Erro ao adicionar:', error);
     }
   };
 

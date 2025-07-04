@@ -43,11 +43,10 @@
 
 .carrinho{
 
-        height: 30%;
-        font-size: 1.7rem;
-        color:#312b2e;
-        cursor:pointer;
+      position: relative;
+      top:0.1rem;
     }
+
     
 .box-bottom{
     
@@ -75,13 +74,13 @@
       width: 20%;
       display: flex;
       justify-content: space-around;
-      font-weight: 500;
+      font-weight:700;
     }
     
     .barra-nav{
 
       text-Decoration:none;
-      background-Color:#b672e0;
+      background-Color:#A2D2FF;
       padding:0.2rem 0.6rem;
       border-Radius:20px;
       color: #312b2e;
@@ -89,6 +88,6 @@
 
     .barra-nav:hover{
 
-     background-color: #f1d5e0;
+     background-color: #e26b9b;
     }
     

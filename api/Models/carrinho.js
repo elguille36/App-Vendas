@@ -4,21 +4,9 @@ import Produto from './produto.js';
 import chalk from 'chalk';
 
 const Carrinho = sequelize.define('Carrinho', {
-  produtoId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: Produto,
-      key: 'id'
-    }
-  },
-  quantidade: {
-    type: DataTypes.INTEGER,
-    defaultValue: 1
-  }
-}, {
-  tableName: 'carrinho',
-  timestamps: false
+  nome: DataTypes.STRING,
+  preco: DataTypes.FLOAT,
+  quantidade: DataTypes.INTEGER,
 });
 
 Carrinho.belongsTo(Produto, { foreignKey: 'produtoId' });

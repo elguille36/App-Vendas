@@ -1,11 +1,12 @@
 import express from 'express';
-import {listarCarrinho,adicionarAoCarrinho,removerDoCarrinho,limparCarrinho} from '../Controllers/carrinhocontroller.js';
+import {listarCarrinho,adicionarItem,atualizarItem,removerItem,limparCarrinho} from '../Controllers/carrinhocontroller.js';
 
 const router = express.Router();
 
+router.post('/carrinho', adicionarItem);
 router.get('/carrinho', listarCarrinho);
-router.post('/carrinho', adicionarAoCarrinho);
-router.delete('/carrinho/:id', removerDoCarrinho);
+router.put('/carrinho/:id', atualizarItem);
+router.delete('/carrinho/:id', removerItem);
 router.delete('/carrinho', limparCarrinho);
 
 

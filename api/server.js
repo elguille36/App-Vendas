@@ -15,10 +15,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/', produtoRoutes);
-app.use('/public', express.static('public'));
+app.use('/public/img', express.static('public'));
 app.use('/', carrinhoRoutes);
 
 
+//sincroniza as duas tabela no banco de dados
 sequelize.sync().then(() => {
 app.listen(3001, () => console.log(chalk.bgGreen`APi sincronizado com banco de dados na porta 3001`));
 });

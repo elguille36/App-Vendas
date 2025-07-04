@@ -2,75 +2,75 @@ import Carrinho from "../Models/carrinho.js";
 import Produto from '../Models/produto.js';
 import chalk from 'chalk';
 
-// ✅ Listar carrinho com produtos associados
-export async function listarCarrinho(req, res) {
+
+
+export const adicionarItem = async (req, res) => {
+  const { nome, preco, quantidade, imagem} = req.body;
+
   try {
-    const itens = await Carrinho.findAll({
-      include: {
-        model: Produto,
-        attributes: ['id', 'nome', 'preco', 'imagem', 'categoria']
-      }
-    });
+    const itemExistente = await Carrinho.findOne({ where: { nome } });
 
-    res.status(200).json(itens);
-  } catch (error) {
-    console.error('❌ Erro ao listar carrinho:', error);
-    res.status(500).json({ erro: 'Erro ao listar itens do carrinho.' });
-  }
-}
-
-// ✅ Adicionar item ao carrinho
-export async function adicionarAoCarrinho(req, res) {
-  try {
-    const { produtoId, quantidade } = req.body;
-
-    const existente = await Carrinho.findOne({ where: { produtoId } });
-
-    if (existente) {
-      existente.quantidade += quantidade || 1;
-      await existente.save();
-      return res.json(existente);
+    if (itemExistente) {
+      itemExistente.quantidade += quantidade;
+      await itemExistente.save();
+      return res.status(200).json(itemExistente);
     }
 
-    const novo = await Carrinho.create({
-      produtoId,
-      quantidade: quantidade || 1
-    });
-
-    res.status(201).json(novo);
+    const novoItem = await Carrinho.create({ nome, preco, quantidade,imagem });
+    res.status(201).json(novoItem);
   } catch (error) {
-    console.error('❌ Erro ao adicionar ao carrinho:', error);
-    res.status(500).json({ erro: 'Erro ao adicionar ao carrinho.' });
+    res.status(500).json({ erro: 'Erro ao adicionar ao carrinho' });
   }
-}
+};
 
-// ✅ Remover item do carrinho
-export async function removerDoCarrinho(req, res) {
+export const listarCarrinho = async (req, res) => {
   try {
-    const { id } = req.params;
+    const itens = await Carrinho.findAll();
+    res.json(itens);
+  } catch (error) {
+    res.status(500).json({ erro: 'Erro ao listar o carrinho' });
+  }
+};
+// Atualizar a quantidade de um item
+export const atualizarItem = async (req, res) => {
+  const { id } = req.params;
+  const { quantidade } = req.body;
+
+  try {
+    const item = await Carrinho.findByPk(id);
+    if (!item) return res.status(404).json({ erro: 'Item não encontrado' });
+
+    item.quantidade= quantidade;
+    await item.save();
+    res.json(item);
+  } catch (error) {
+    res.status(500).json({ erro: 'Erro ao atualizar item' });
+  }
+};
+
+// Remover item específico
+export const removerItem = async (req, res) => {
+  const { id } = req.params;
+
+  try {
     const item = await Carrinho.findByPk(id);
     if (!item) return res.status(404).json({ erro: 'Item não encontrado' });
 
     await item.destroy();
-    res.json({ mensagem: 'Removido do carrinho' });
+    res.json({ mensagem: 'Item removido com sucesso' });
   } catch (error) {
-    console.error('❌ Erro ao remover do carrinho:', error);
     res.status(500).json({ erro: 'Erro ao remover item' });
   }
-}
+};
 
-// ✅ Limpar carrinho inteiro
-export async function limparCarrinho(req, res) {
+// Limpar o carrinho inteiro
+export const limparCarrinho = async (req, res) => {
   try {
-    await Carrinho.destroy({ where: {} });
-    res.json({ mensagem: 'Carrinho limpo' });
+    await Carrinho.destroy({ where: {}, truncate: true});// limpa a tabela mais ediciente
+    res.json({ mensagem: 'Carrinho limpo com sucesso' });
   } catch (error) {
-    console.error('❌ Erro ao limpar carrinho:', error);
     res.status(500).json({ erro: 'Erro ao limpar carrinho' });
   }
-}
 
-console.log(chalk.bgGray` Controlador Carrinho Funcionando`);
-
-
-
+  console.log(chalk.bgGreenBright`controlador carrinho rodando`)
+};
