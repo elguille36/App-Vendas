@@ -6,6 +6,9 @@ import Produto from './Models/produto.js';
 import Carrinho from './Models/carrinho.js';
 import carrinhoRoutes from './Routes/carrinho.js';
 import chalk from 'chalk';
+import usuarioRoutes from './Routes/usuario.js';
+
+
 
 
 
@@ -15,8 +18,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/', produtoRoutes);
-app.use('/public/img', express.static('public'));
+app.use('/usuarios', usuarioRoutes);
 app.use('/', carrinhoRoutes);
+app.use('/public', express.static('public'));
 
 
 //sincroniza as duas tabela no banco de dados

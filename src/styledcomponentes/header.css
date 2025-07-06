@@ -45,36 +45,50 @@
 
       position: relative;
       top:0.1rem;
+      border-radius: 20px;
     }
 
     
 .box-bottom{
     
       width: 15%;
-      display: flex;
-      justify-content: space-around;
-      font-weight:500;
+      
     }
-    
-.cadastro-login{
-    
-      background-color: #f1d5e0;
-      padding: 0.2rem 0.4rem 0.2rem 0.4rem;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-    
-.cadastro-login:hover{
-    
-      background-color:#e26b9b;
+  
+
+    .enlaceCadastro{
+
+    margin-right: 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    background-color:#f1d5e0;
+    padding: 0.2rem 1rem;
+    border-radius:10px;
+    cursor: pointer;
     }
 
-    .enlaceNav{
+    .enlaceCadastro:hover{
 
-      width: 20%;
-      display: flex;
-      justify-content: space-around;
-      font-weight:700;
+      background-color: #e26b9b;
+    }
+
+
+    .enlaceLogin{
+
+    text-decoration: none;
+    font-weight: 700;
+    background-color:#f1d5e0;
+    padding: 0.2rem 1rem;
+    margin-right: 1rem;
+    border-radius:10px;
+    cursor: pointer;
+
+    }
+
+    
+    .enlaceLogin:hover{
+
+      background-color: #e26b9b;
     }
     
     .barra-nav{
@@ -90,4 +104,36 @@
 
      background-color: #e26b9b;
     }
-    
+
+    .Pe-pagina{
+
+     width: 100%;
+     text-align: center;
+     margin-top: 10rem;
+     color:#f1d5e0;
+     display: flex;
+     justify-content: center;
+     height:10vh;
+     background-color: #312b2e;
+
+    }
+
+
+ /* .tilte{
+
+      font-weight: 600;
+      position: relative;
+      animation: movi-conti 3s linear infinite;
+  }
+@keyframes movi-conti {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100px;
+  }
+  100% {
+    left: 0;
+  }
+}
+     */

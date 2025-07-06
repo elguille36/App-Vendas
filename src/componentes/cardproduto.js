@@ -18,5 +18,4 @@ const CardProduto = ({ produto }) => {
     </div>
   );
 };
-
 export default CardProduto;

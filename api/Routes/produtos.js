@@ -4,8 +4,6 @@ import {listarProduto,criar,atualizar,excluir} from '../Controllers/produtocontr
 
 const router = express.Router();
  
-// router.get('/', listarTodos);
-// router.get('/categoria/:categoria', listarPorCategoria);
 router.get('/produto', listarProduto);
 router.post('/', criar);
 router.put('/:id', atualizar);

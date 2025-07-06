@@ -37,7 +37,7 @@ const Carrinho = () => {
   };
 
   const limparCarrinho = async () => {
-    await axios.delete('http://localhost:3001/carrinho');
+    await axios.delete('http://localhost:3001/');
     carregarCarrinho();
   };
 
@@ -48,18 +48,15 @@ const Carrinho = () => {
       <button
         onClick={alternarCarrinho}
         style={{
-          padding: '0.5rem 1rem',
-          background: '#e26b9b',
           border: 'none',
-          borderRadius: '5px',
+          borderRadius: '40px',
           cursor: 'pointer',
-          fontWeight:'800',
-          color:'#f1d5e0',
-  
+          fontSize:'1.7rem',
+          backgroundColor:'#f1d5e0',
 
         }}
       >
-        🛒 Carrinho
+        🛒
       </button>
 
       {mostrarCarrinho && (
@@ -94,7 +91,7 @@ const Carrinho = () => {
                       min="1"
                       value={item.quantidade}
                       onChange={(e) => atualizarItem(item.id, parseInt(e.target.value))}
-                      style={{ width: '25px', marginLeft: '5px', marginRight: '5px',height:'20px',marginTop:'17px' }}
+                      style={{ width: '28px', marginLeft: '5px', marginRight: '5px',height:'20px',marginTop:'17px' }}
                     />
                     <h3 style={{fontSize:'1rem'}}>= R$ {(item.preco * item.quantidade).toFixed(2)}</h3>
                     </div>

@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 function Navbar() {
 
   return (
-    <nav style={{display:"flex",
-    justifyContent:"flex-end",
-    marginTop:"1rem"}} >
+    <nav>
+    {/* // <nav style={{display:"flex", */}
+    {/* // justifyContent:"flex-end",
+    // marginTop:"1rem"}} > */}
 
-    <div className="enlaceNav">
-    <Link className="barra-nav" to="/About">Sobre Nós</Link>
-    <Link className="barra-nav" to="/Contato">Contato</Link>
-    </div>
+    
+    <Link className="enlaceCadastro" to= "/cadastro">Cadastro</Link> 
+     <Link className="enlaceLogin"  to="/login">Login</Link>
+     
     </nav>
   );
 }

@@ -57,10 +57,7 @@ function LojaProdutos() {
                   produtos.map((p) => (
 
                  <CardProduto key={p.id} produto={p} />
-                    // <div key={produto.id} className="bg-white p-3 rounded shadow">
-                    //   <h2 className="font-semibold">{produto.nome}</h2>
-                    // //   <p>R$ {produto.preco}</p>
-                    // </div>
+                    
                   ))
                 )}
               </div>

@@ -66,7 +66,7 @@ export const removerItem = async (req, res) => {
 // Limpar o carrinho inteiro
 export const limparCarrinho = async (req, res) => {
   try {
-    await Carrinho.destroy({ where: {}, truncate: true});// limpa a tabela mais ediciente
+    await Carrinho.destroy({ where: {}, truncate: true});// limpa a tabela mais eficiente
     res.json({ mensagem: 'Carrinho limpo com sucesso' });
   } catch (error) {
     res.status(500).json({ erro: 'Erro ao limpar carrinho' });

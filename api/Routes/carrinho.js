@@ -7,7 +7,7 @@ router.post('/carrinho', adicionarItem);
 router.get('/carrinho', listarCarrinho);
 router.put('/carrinho/:id', atualizarItem);
 router.delete('/carrinho/:id', removerItem);
-router.delete('/carrinho', limparCarrinho);
+router.delete('/', limparCarrinho);
 
 
 

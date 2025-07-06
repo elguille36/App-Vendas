@@ -3,7 +3,7 @@ import Produto from './Models/produto.js';
 import chalk from 'chalk';
 
 
-await sequelize.sync({ force: true }); //com false manten os dados ja salvo
+await sequelize.sync({ force: false }); //com false manten os dados ja salvo
 
 await Produto.bulkCreate([
   // Alimentos
