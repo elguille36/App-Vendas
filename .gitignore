@@ -1,0 +1,30 @@
+# === General ===
+notes/
+node_modules/
+dist/
+build/
+*.log
+*.local
+.DS_Store
+
+# === Vite/React specific ===
+client/dist/
+client/node_modules/
+client/public/img/
+
+# === Express/Backend specific ===
+api/node_modules/
+api/logs/
+api/*.log
+
+# === Editor junk ===
+.vscode/
+.idea/
+*.suo
+*.njsproj
+*.sln
+*.sw?
+
+# === Optional ===
+.env
+.env.*
